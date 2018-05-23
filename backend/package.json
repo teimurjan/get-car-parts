@@ -1,0 +1,39 @@
+{
+  "name": "get-car-parts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon --exec babel-node index.js",
+    "migrate:dev": "NODE_ENV=development sequelize db:migrate",
+    "migrate:undo:dev": "NODE_ENV=development sequelize db:migrate:undo:all",
+    "seed:dev": "NODE_ENV=development sequelize db:seed:all",
+    "create-model:dev": "NODE_ENV=development sequelize model:create",
+    "create-seed:dev": "NODE_ENV=development sequelize seed:create"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.4",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.7",
+    "sequelize-auto-migrations": "^1.0.2",
+    "sequelize-cli": "^4.0.0",
+    "yup": "^0.24.1"
+  }
+}

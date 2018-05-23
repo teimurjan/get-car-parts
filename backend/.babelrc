@@ -1,0 +1,5 @@
+{
+  "presets": ["env"],
+  "ignore": ["node_modules"],
+  "plugins": ["dynamic-import-node", "transform-object-rest-spread"]
+}
