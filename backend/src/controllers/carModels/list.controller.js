@@ -1,9 +1,9 @@
-import { OK_CODE } from '../../http';
+import { OK_CODE } from '../../constants/http';
 
-const makeListCarModelsController = carModelsService => ({
+const makeListCarModelsController = service => ({
   get: async (req) => {
-    const carModels = await carModelsService.getAllForBrand(req.params.brandId);
-    return { body: carModels, statusCode: OK_CODE };
+    const carModels = await service.getAllForBrand(req.params.brandId);
+    return { body: { data: carModels }, statusCode: OK_CODE };
   },
 });
 

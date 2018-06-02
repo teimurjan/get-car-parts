@@ -1,6 +1,8 @@
 import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
+import firebaseAdmin from 'firebase-admin';
+import firebaseKey from '../../get-car-parts-firebase-adminsdk.json';
 
 const makeApp = () => {
   const app = express();
@@ -8,7 +10,15 @@ const makeApp = () => {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
-  return app;
+  const firebaseCredential = firebaseAdmin.credential.cert(firebaseKey);
+  firebaseAdmin.initializeApp({
+    credential: firebaseCredential,
+  });
+
+  return {
+    instance: app,
+    firebase: firebaseAdmin,
+  };
 };
 
 export default makeApp;

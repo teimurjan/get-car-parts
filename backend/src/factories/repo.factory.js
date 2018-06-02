@@ -11,7 +11,7 @@ const makeRepo = model => ({
   },
   getAll: () => model.findAll(),
   filterBy: query => model.findAll({ where: query }),
-  create: title => model.create({ title }),
+  create: data => model.create(data),
   delete: async (id) => {
     const obj = await model.findById(id);
     return obj.destroy();

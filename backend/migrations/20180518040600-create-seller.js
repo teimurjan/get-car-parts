@@ -11,6 +11,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      notificationToken: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       name: {
         type: Sequelize.STRING,
         allowNull: false,
